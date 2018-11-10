@@ -42,6 +42,7 @@ class Hero {
     this.startY = this.jump*4 + 55; //some padding
     this.x = this.startX;
     this.y = this.startY;
+    this.victory = false;
   }
   render(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -53,6 +54,9 @@ class Hero {
           enemy.x < this.x + this.step/2)){
         this.reset();
       }
+    }
+    if(this.y === 55){ //hero made it to the final tile (water) at y=55
+      this.victory = true;
     }
   }
   reset(){ //reset hero back to the start of the level

@@ -1,3 +1,34 @@
 body {
     text-align: center;
 }
+
+/* Modal styling reference: Matthew Cranford */
+.modal__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.438);
+}
+
+.modal__title{
+  align-items: center;
+}
+
+.modal__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.modal__button {
+  width: 60px;
+  height: 30px;
+}
+
+.hide{
+  display: none;
+}
