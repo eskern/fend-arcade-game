@@ -39,12 +39,25 @@ class Hero {
     this.step = 101; //based on block size
     this.jump = 83; // based on block size
     this.startX = this.step*2;
-    this.startY = this.jump*5 - 20; //some padding
+    this.startY = this.jump*4 + 55; //some padding
     this.x = this.startX;
     this.y = this.startY;
   }
   render(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  }
+  update(){
+    for(let enemy of allEnemies){
+      if(this.y === enemy.y &&
+        (enemy.x+enemy.step/2 > this.x &&
+          enemy.x < this.x + this.step/2)){
+        this.reset();
+      }
+    }
+  }
+  reset(){ //reset hero back to the start of the level
+    this.x = this.startX;
+    this.y = this.startY;
   }
   /*
    * Update hero's x/y position based on keyboard input
